@@ -1,0 +1,162 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: rgb(124, 124, 255);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+main{
+    background-color: white;
+    width: 900px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2em;
+    gap: 5px;
+    
+}
+section > h1{
+    text-align: center;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.palavra-secreta{
+    height: 70px;
+    display: flex;
+    align-items:end;
+    justify-content: center;
+    gap: 10px;
+}
+.linha{
+    
+    border-bottom: solid 2px black;
+    text-align: center;
+    width: 50px;
+}
+.escondido{
+    display: none;
+}
+.letra{
+    font-weight: bold;
+    font-size: 1.6em;
+}
+.dica{
+    
+}
+.chances > span{
+    color: orange;
+}
+#ultima-chance{
+    display: none;
+}
+
+/* TECLADO */
+.teclado{
+    
+    height: 200px;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.tecla{
+    background-color: #5761AA;
+    width: 50px;
+    text-align: center;
+    font-size: 1.6em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+}
+.tecla:hover{
+    background-color: #aeb5ec;
+
+}
+.pressionado{
+    background-color: #aeb5ec;
+    width: 50px;
+    text-align: center;
+    font-size: 1.6em;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;;
+    
+}
+/* DICAS */
+
+/* background transparente */
+
+/* PERDEU CAIXINHA */
+.perdeu{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    position:relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: 1.5s;
+    
+        
+    opacity: 0; /* Inicialmente definido como invisível */
+    transition: opacity 1.5s; /* Adicione uma transição de 1.5 segundos para a propriedade opacity */
+    
+}
+.perdeu > img{
+    width: 300px;
+}
+.perdeu > p{
+    font-size: 1.4em;
+}
+.btn-jogar-novamente{
+
+    font-size: 1.6em;
+    padding: 20px;
+    border: none;
+    background-color: #5761AA;
+    color: white;
+    border-radius: 10px;
+
+}
+.palavra-correta{
+    color:#5761AA;
+    font-weight: bold;
+
+}
+/* GANHOU */
+.ganhou{
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+    width: 500px;
+    padding: 20px;
+    position:relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: 1.5s;
+    
+        
+    opacity: 0; /* Inicialmente definido como invisível */
+    transition: opacity 1.5s; /* Adicione uma transição de 1.5 segundos para a propriedade opacity */
+}
+.ganhou > p{
+    font-size: 1.4em;
+}

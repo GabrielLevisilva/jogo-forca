@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body> 
+        <input type="button" value="começar" id="btn-inicio" onclick="inicio()">
+        <section >
+            <img src="images/hangman-6.svg" id="hang" alt="">
+        </section>
+        <div class="local">
+
+        </div>
+
+        <div class="teclado">
+
+
+
+        </div>
+        <p class="chances">
+
+        </p>
+
+    
+        <script>
+            let palavras = ['F','E','I','J','O','A','D','A']
+            let chances = 6
+            const chancesLocal = document.querySelector('.chances')
+            chancesLocal.innerHTML = `Você tem ${chances} chances`;
+            
+            function chancesAcabaram(){
+
+                document.querySelector('.teclado')
+                chancesLocal.innerHTML = `Você perdeu`;
+
+            }
+
+            function contarChances() {
+                chances--; // Reduza o número de chances em 1
+                chancesLocal.innerHTML = `Você tem ${chances} chances`;
+                let hangman = document.querySelector('#hang')
+                
+                hangman.src = 'images/hangman-' + chances +'.svg'
+
+                if (chances <= 0) {
+                    // Se as chances esgotarem, você pode tomar alguma ação aqui.
+                    alert("Suas chances acabaram!");
+                    chancesAcabaram()
+                }
+            }
+            function inicio(){
+                let jogueNovamente = document.createElement('input')
+
+                jogueNovamente.setAttribute('onclick', 'jogueNovamente()')
+
+                const teclado = document.querySelector('.teclado')
+                
+
+                const btnInicio = document.querySelector('#btn-inicio')
+                btnInicio.style.display = 'none'
+
+                const localLetras = document.querySelector('.local')
+                
+                
+
+                for(let c = 0;c < palavras.length; c++){
+
+                    let letra = document.createElement('p')
+                    letra.setAttribute('class', 'letra-style')
+                    letra.setAttribute('id', 'letra' + c)
+                    letra.innerHTML = palavras[c]
+                    let linhaLetra = document.createElement('p')
+                    linhaLetra.setAttribute('class', 'linha')
+                    linhaLetra.appendChild(letra)
+                    localLetras.appendChild(linhaLetra)
+                }
+
+                const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+                for(let le = 0; le < alfabeto.length; le++){
+                   
+                let tecla = document.createElement('input')
+                tecla.setAttribute('type', 'button')
+                tecla.setAttribute('value', alfabeto[le])
+                tecla.setAttribute('onclick', 'teclaPressionada()')
+                tecla.setAttribute('class', 'btn-teclado identificador-btn')
+                teclado.appendChild(tecla)
+            }
+            }
+
+            function teclaPressionada() {
+                let btn = event.target;
+                let btnLetra = btn.value;
+
+                let letrasReveladas = 0; // Contador para controlar o número de letras reveladas
+
+                for (let i = 0; i < palavras.length; i++) {
+                    if (palavras[i] === btnLetra) {
+                        // Se a letra corresponder, revele-a
+                        let mudarLetra = document.getElementById('letra' + i);
+                        mudarLetra.style.display = 'block';
+                        letrasReveladas++;
+                        
+                    }
+                }
+
+                // Se nenhuma letra foi revelada, diminua as chances
+                if (letrasReveladas === 0) {
+                    contarChances();
+                }
+
+                
+
+                // Desative o botão após a pressão
+                btn.disabled = true;
+                btn.classList.add('pressionado');
+                
+            }
+
+
+
+
+        </script>
+</body>
+</html>

@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-celular.css">
+
+    
 </head>
 <body>
     <main>
@@ -32,7 +34,7 @@
         <img src="images/lost.gif" alt="">
         <h2>Fim de jogo</h2>
         <p>A palavra correta era <span class="palavra-correta">blabla</span></p>
-        <input type="button" value="Jogar novamente" class="btn-jogar-novamente">
+        <input type="button" value="Jogar novamente" class="btn-jogar-novamente" onclick="jogarNovamente()">
         
     </div>
 
@@ -40,11 +42,11 @@
         <img src="images/victory.gif" alt="">
         <h2>Parabéns!</h2>
         <p>Você achou a palavra correta <span class="palavra-correta"></span></p>
-        <input type="button" value="Jogar novamente" class="btn-jogar-novamente">
+        <input type="button" value="Próximo desafio" class="btn-jogar-novamente" onclick="jogarNovamente()">
     </div>
 
-    <script src="js/index.js">
-        
-    </script>
+    <script src="js/index.js"></script>
+    <script src="js/jogarNovamente.js"></script>
+    
 </body>
 </html>

@@ -9,12 +9,12 @@ const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
     const ganhou = document.querySelector('.ganhou')
     const palavraSecreta = document.querySelector('.palavra-secreta')
     const palavraCorreta = document.querySelector('.palavra-correta')
-
-
     let contadorPalavras = 0
-
     let palavraAtual = 'palavra' + contadorPalavras
     console.log(palavraAtual)
+
+
+    
 
 // CRIA AS LINHAS COM CADA LETRA ESCONDIDA
 for(var i = 0; i < palavra0.length; i++){
@@ -29,6 +29,8 @@ for(var i = 0; i < palavra0.length; i++){
     linhaLetra.appendChild(letra)
     palavraSecreta.appendChild(linhaLetra)
 }
+
+
 criaTeclado()
 
 // CRIA TECLADO
@@ -52,7 +54,7 @@ for(let c = 0; c< alfabeto.length; c++){
 
 
 let contadorLetrasReveladas = 0
-console.log(palavra0,length)
+
 
 palavraCorreta.innerHTML = palavra0.join('')
 
@@ -78,15 +80,8 @@ function teclaPressionada(event) {
                 ganhou.style.opacity = '1';
                 
             }
-            
-
-            
-
         }
-
     }
-
-    
 
     if(letrasReveladas === 0){
 
@@ -104,6 +99,7 @@ function teclaPressionada(event) {
 function errou(){
 
     let todasTeclas = document.querySelectorAll('.tecla')
+    
     chances--
 
     localChances.innerHTML = `Chances: ${chances}/6`
@@ -137,3 +133,5 @@ function errou(){
         }
 
 }
+
+

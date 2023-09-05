@@ -8,13 +8,15 @@ const btnJogarNovamente = document.querySelector('.btn-jogar-novamente')
 
     
  function jogarNovamente(){
-
-    dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
+    
 
     console.log('Função Jogar novamente')
     let todasTeclas = document.querySelectorAll('.pressionado')
 
     contadorPalavras++
+
+    console.log('DICA CARREGADA jogarNovamente ' + contadorPalavras)
+    dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
     
     perdeu.style.display = 'none'
     ganhou.style.display = 'none'

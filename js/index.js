@@ -28,6 +28,7 @@ const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 
 
     // DICAS
+    console.log('DICA CARREGADA index ' + contadorPalavras)
     const dica = document.querySelector('.dica')
     dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
 

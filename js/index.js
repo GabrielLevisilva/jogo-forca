@@ -1,10 +1,16 @@
 // CONTANTES E VARIAVEIS
 let palavra0 = ['F','O','T','O','G','R','A','F','I','A']
+let dica0 = ['Ele captura sua aparência']
 let palavra1 = ['B','O','L','A','C','H','A']
+let dica1 = ['Um alimento que esfarela']
 let palavra2 = ['A','B','A','C','A','X','I']
+let dica2 = ['Uma fruta considerada rei']
 let palavra3 = ['D','I','N','H','E','I','R','O']
+let dica3 = ['A raiz de todo mal']
 let palavra4 = ['A','N','A','T','O','M','I','A']
+let dica4 = ['O seu corpo']
 let palavras = [palavra0, palavra1, palavra2, palavra3, palavra4]
+let dicas = [dica0, dica1, dica2, dica3, dica4]
 const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     let chances = 6
     const localChances = document.querySelector('.chances')
@@ -13,10 +19,17 @@ const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
     const palavraSecreta = document.querySelector('.palavra-secreta')
     const palavraCorreta = document.querySelector('.palavra-correta')
     let contadorPalavras = 0
-    console.log('verificador 1')
 
-
+    // if(contadorPalavras == 4){
+    //     alert('O jogo acabou! Obrigado por Jogar1')
+    // }
     
+    // console.log('verificador 1')
+
+
+    // DICAS
+    const dica = document.querySelector('.dica')
+    dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
 
 // CRIA AS LINHAS COM CADA LETRA ESCONDIDA
 for(var i = 0; i < palavras[contadorPalavras].length; i++){
@@ -139,4 +152,5 @@ function errou(){
         }
 
 }
+
 

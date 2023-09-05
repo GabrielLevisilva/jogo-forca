@@ -2,9 +2,15 @@
 
 const btnJogarNovamente = document.querySelector('.btn-jogar-novamente')
 
+// if(contadorPalavras == 4){
+//     alert('O jogo acabou! Obrigado por Jogar2')
+// }
 
     
  function jogarNovamente(){
+
+    dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
+
     console.log('Função Jogar novamente')
     let todasTeclas = document.querySelectorAll('.pressionado')
 

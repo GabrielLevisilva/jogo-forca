@@ -1,0 +1,43 @@
+@media (max-width: 956px){
+    main{
+        flex-direction: column;
+    }
+}
+@media (max-width: 638px) {
+
+    .palavra-secreta{
+        background-color: antiquewhite;
+        width: 80%;
+        margin: auto;
+    }
+    .teclado{
+        background-color: antiquewhite;
+        width: 90%;
+        margin: auto;
+    }
+    
+}
+
+
+@media(max-width: 380px){
+
+    main{
+        width: 85%;
+    }
+    section > img{
+        width: 30%;
+    }
+    .teclado{
+        width: 90%;
+        padding-top: 20px;
+    }
+    .tecla, .pressionado{
+        font-size: 1em;
+        width: 15%;
+    }
+
+    .perdeu, .ganhou{
+        width: 80%;
+    }
+
+}

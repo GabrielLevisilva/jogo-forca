@@ -2,9 +2,6 @@
 
 const btnJogarNovamente = document.querySelector('.btn-jogar-novamente')
 
-// if(contadorPalavras == 4){
-//     alert('O jogo acabou! Obrigado por Jogar2')
-// }
 
     
  function jogarNovamente(){
@@ -15,7 +12,14 @@ const btnJogarNovamente = document.querySelector('.btn-jogar-novamente')
 
     contadorPalavras++
 
-    console.log('DICA CARREGADA jogarNovamente ' + contadorPalavras)
+    if(contadorPalavras >= palavras.length){
+        alert('O jogo acabou! Obrigado por Jogar')
+
+        acabou()
+    }
+    else{
+
+        console.log('DICA CARREGADA jogarNovamente ' + contadorPalavras)
     dica.innerHTML = 'Dica: ' + dicas[contadorPalavras]
     
     perdeu.style.display = 'none'
@@ -70,6 +74,10 @@ const btnJogarNovamente = document.querySelector('.btn-jogar-novamente')
 
     
     console.log('letras reveladas ' + contadorLetrasReveladas)
+
+    }
+
+    
 
  }
  

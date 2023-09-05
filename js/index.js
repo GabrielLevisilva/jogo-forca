@@ -20,9 +20,7 @@ const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
     const palavraCorreta = document.querySelector('.palavra-correta')
     let contadorPalavras = 0
 
-    // if(contadorPalavras == 4){
-    //     alert('O jogo acabou! Obrigado por Jogar1')
-    // }
+    
     
     // console.log('verificador 1')
 

@@ -2,14 +2,10 @@
     margin: 0px;
     padding: 0px;
 }
-body{
-    background-color: rgb(124, 124, 255);
-    font-family: Arial, Helvetica, sans-serif;
 
-}
 main{
     background-color: white;
-    width: 900px;
+    max-width: 900px;
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -18,6 +14,8 @@ main{
     text-align: center;
     font-size: 1.2em;
     gap: 5px;
+
+    box-shadow: 1px 10px 20px 6px rgba(0, 0, 0, 0.178);
     
 }
 section > h1{
@@ -98,16 +96,22 @@ section > h1{
 /* DICAS */
 
 /* background transparente */
-
+body{
+    background-color: rgb(124, 124, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    
+}
 /* PERDEU CAIXINHA */
-.perdeu{
+.perdeu, .ganhou{
     background-color: white;
     border-radius: 20px;
     text-align: center;
-    width: 500px;
+    width: 389px;
     padding: 20px;
-    position:relative;
-    top: 20%;
+    position: absolute ;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
@@ -117,9 +121,10 @@ section > h1{
     opacity: 0; /* Inicialmente definido como invisível */
     transition: opacity 1.5s; /* Adicione uma transição de 1.5 segundos para a propriedade opacity */
     
+    box-shadow: 1px 10px 20px 6px rgba(0, 0, 0, 0.178);
 }
 .perdeu > img{
-    width: 300px;
+    width: 70%;
 }
 .perdeu > p{
     font-size: 1.4em;
@@ -141,23 +146,12 @@ section > h1{
 
 }
 /* GANHOU */
-.ganhou{
-    background-color: white;
-    border-radius: 20px;
-    text-align: center;
-    width: 500px;
-    padding: 20px;
-    position:relative;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
-    transition: 1.5s;
-    
-        
-    opacity: 0; /* Inicialmente definido como invisível */
-    transition: opacity 1.5s; /* Adicione uma transição de 1.5 segundos para a propriedade opacity */
-}
 .ganhou > p{
     font-size: 1.4em;
 }
+.ganhou > img{
+    width: 70%;
+}
+
+
+

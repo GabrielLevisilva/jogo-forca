@@ -6,12 +6,12 @@
 @media (max-width: 638px) {
 
     .palavra-secreta{
-        background-color: antiquewhite;
+        
         width: 80%;
         margin: auto;
     }
     .teclado{
-        background-color: antiquewhite;
+        
         width: 90%;
         margin: auto;
     }
@@ -34,6 +34,12 @@
     .tecla, .pressionado{
         font-size: 1em;
         width: 15%;
+    }
+    .linha{
+        width: 50%;
+    }
+    .letra{
+        font-size: 1em;
     }
 
     .perdeu, .ganhou{

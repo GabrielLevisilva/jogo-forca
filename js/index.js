@@ -1,7 +1,10 @@
 // CONTANTES E VARIAVEIS
 let palavra0 = ['F','O','T','O','G','R','A','F','I','A']
-let palavra1 = ['C','A','R','R','O']
-let palavras = [palavra0, palavra1]
+let palavra1 = ['B','O','L','A','C','H','A']
+let palavra2 = ['A','B','A','C','A','X','I']
+let palavra3 = ['D','I','N','H','E','I','R','O']
+let palavra4 = ['A','N','A','T','O','M','I','A']
+let palavras = [palavra0, palavra1, palavra2, palavra3, palavra4]
 const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     let chances = 6
     const localChances = document.querySelector('.chances')
@@ -10,19 +13,18 @@ const alfabeto = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
     const palavraSecreta = document.querySelector('.palavra-secreta')
     const palavraCorreta = document.querySelector('.palavra-correta')
     let contadorPalavras = 0
-    let palavraAtual = 'palavra' + contadorPalavras
-    console.log(palavraAtual)
+    console.log('verificador 1')
 
 
     
 
 // CRIA AS LINHAS COM CADA LETRA ESCONDIDA
-for(var i = 0; i < palavra0.length; i++){
+for(var i = 0; i < palavras[contadorPalavras].length; i++){
 
     let letra =document.createElement('p')
     letra.setAttribute('class', 'letra escondido')
     letra.setAttribute('id', 'letra' + i)
-    letra.innerHTML = palavra0[i]
+    letra.innerHTML = palavras[contadorPalavras][i]
     
     let linhaLetra = document.createElement('p')
     linhaLetra.setAttribute('class', 'linha')
@@ -30,9 +32,10 @@ for(var i = 0; i < palavra0.length; i++){
     palavraSecreta.appendChild(linhaLetra)
 }
 
+console.log('verificador 2 LINHAS FORAM CRIADAS')
 
 criaTeclado()
-
+console.log('Cria teclado função')
 // CRIA TECLADO
 function criaTeclado(){
 const teclado = document.querySelector('.teclado')
@@ -47,6 +50,7 @@ for(let c = 0; c< alfabeto.length; c++){
 
     teclado.appendChild(tecla)
 }
+console.log('verificador 3 TECLADO CRIADO')
 }
 
     
@@ -56,18 +60,20 @@ for(let c = 0; c< alfabeto.length; c++){
 let contadorLetrasReveladas = 0
 
 
-palavraCorreta.innerHTML = palavra0.join('')
+palavraCorreta.innerHTML = palavras[contadorPalavras].join('')
 
 
 
 function teclaPressionada(event) {
+
+    console.log('Função tecla pressionada')
     let btn = event.target;
     let btnLetra = btn.value;
 
     let letrasReveladas = 0
 
-    for( let o = 0; o < palavra0.length; o++){
-        if(palavra0[o] === btnLetra){
+    for( let o = 0; o < palavras[contadorPalavras].length; o++){
+        if(palavras[contadorPalavras][o] === btnLetra){
 
             document.getElementById('letra' + o).style.display = 'block'
 
@@ -75,7 +81,7 @@ function teclaPressionada(event) {
             contadorLetrasReveladas++
             console.log(contadorLetrasReveladas)
 
-            if(contadorLetrasReveladas == palavra0.length){
+            if(contadorLetrasReveladas == palavras[contadorPalavras].length){
                 ganhou.style.display = 'block'
                 ganhou.style.opacity = '1';
                 
@@ -91,13 +97,13 @@ function teclaPressionada(event) {
     btn.setAttribute('class', 'pressionado')
     btn.removeAttribute('onclick', 'teclaPressionada(event)')
     
-    
+    console.log('verificador 4 TECLAS PRONTAS PARA SEREM PRESSIONADAS')
 }
 
     
 
 function errou(){
-
+    console.log('Função errou')
     let todasTeclas = document.querySelectorAll('.tecla')
     
     chances--
@@ -118,7 +124,7 @@ function errou(){
         
 
         
-        palavraCorreta.innerHTML = palavra0.join('')
+        palavraCorreta.innerHTML = palavras[contadorPalavras].join('')
         perdeu.style.display = 'block'
         perdeu.style.opacity = '1'; // Define a opacidade para 1 para tornar a div visível
 
@@ -133,5 +139,4 @@ function errou(){
         }
 
 }
-
 
